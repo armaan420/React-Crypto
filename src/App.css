@@ -30,6 +30,10 @@ ul {
   font-size: 10px;
 }
 
+.coin {
+  padding-right: 30px;
+}
+
 .delete-icon {
   display: none;
   position: absolute;
