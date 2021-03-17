@@ -3,9 +3,8 @@ import { Link } from "react-router-dom";
 
 const Coin = ({ coin, handleDelete }) => {
   let classes = coin.price_change_percentage_24h < 0;
-
   return (
-    <Link to="/coinDetail" className="text-decoration-none my-1 ">
+    <Link to={`/coins/${coin.id}`} className="text-decoration-none my-1 ">
       <li className="coin coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark ">
         <img src={coin.image} className="coinlist-image" alt="" />
         <span className="text-decoration-none">${coin.current_price}</span>
