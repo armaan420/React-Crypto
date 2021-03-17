@@ -43,3 +43,18 @@ ul {
 .coin:hover .delete-icon {
   display: block;
 }
+
+.days-btn {
+  margin: 5px;
+  padding: 1px 7px;
+  cursor: pointer;
+  width: 50px;
+  background: rgb(72, 97, 93);
+  color: rgb(255, 251, 251);
+  border-radius: 5px;
+  border: 1px solid rgb(236, 233, 233);
+}
+
+.days-btn:hover {
+  opacity: 0.7;
+}

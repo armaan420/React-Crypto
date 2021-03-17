@@ -6,10 +6,19 @@ import coinGecko from "../apis/coinGecko";
 
 const CoinDetail = () => {
   const { coin } = useParams();
-  const [coinData, setCoinData] = useState([]);
+  const [coinData, setCoinData] = useState({});
   const [coinVolume, setCoinVolume] = useState([]);
   const [day, setDay] = useState(1);
   const [isLoading, setIsLoading] = useState(false);
+
+  const formatData = (data) => {
+    return data.map((item) => {
+      return {
+        t: item[0],
+        y: item[1].toFixed(2),
+      };
+    });
+  };
 
   useEffect(() => {
     const fetchChartData = async () => {
@@ -28,9 +37,9 @@ const CoinDetail = () => {
           },
         }),
       ]);
-
-      setCoinData(coinChart);
-      setCoinVolume(coinInfo);
+      console.log(coinChart);
+      setCoinData(formatData(coinChart.data.prices));
+      setCoinVolume(coinInfo.data[0]);
       setIsLoading(false);
     };
     fetchChartData();
@@ -42,12 +51,17 @@ const CoinDetail = () => {
 
   const renderData = () => {
     if (isLoading) {
-      return <div>Loading...</div>;
+      return <div className="text-light">Loading...</div>;
     }
     return (
       <div className="coinlist">
-        <Chart day={day} coinData={coinData} handleDay={handleDay} />
-        <CoinData />
+        <Chart
+          day={day}
+          coinData={coinData}
+          handleDay={handleDay}
+          coinVolume={coinVolume}
+        />
+        <CoinData coinVolume={coinVolume} />
       </div>
     );
   };
