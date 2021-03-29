@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: rgba(16, 20, 43, 0.904);
+  background-color: rgb(20, 0, 0);
 }
 
 ul {
@@ -22,7 +22,7 @@ ul {
 }
 
 .coinsummary {
-  border-color: white !important;
+  border-color: rgb(24, 13, 13) !important;
   border-style: outset !important;
 }
 
@@ -44,11 +44,16 @@ ul {
   display: block;
 }
 
+.btn-container {
+  display: flex;
+  flex-wrap: inherit;
+}
+
 .days-btn {
   margin: 5px;
   padding: 1px 7px;
   cursor: pointer;
-  width: 50px;
+  width: 50%;
   background: rgb(72, 97, 93);
   color: rgb(255, 251, 251);
   border-radius: 5px;
@@ -57,4 +62,8 @@ ul {
 
 .days-btn:hover {
   opacity: 0.7;
+}
+
+.white {
+  color: aliceblue;
 }

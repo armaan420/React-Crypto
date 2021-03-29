@@ -3,7 +3,14 @@ import React, { createContext, useEffect, useState } from "react";
 export const WatchListContext = createContext();
 
 export const WatchListContextProvider = ({ children }) => {
-  const [watchList, setWatchList] = useState(["bitcoin", "ethereum", "ripple"]);
+  const [watchList, setWatchList] = useState([
+    "bitcoin",
+    "stellar",
+    "ethereum",
+    "ripple",
+    "cardano",
+    "polkadot",
+  ]);
 
   useEffect(() => {
     localStorage.setItem("watchlist", watchList);

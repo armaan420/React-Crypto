@@ -13,10 +13,11 @@ const Coins = () => {
       setisLoading(true);
       const response = await coinGecko.get("/coins/markets", {
         params: {
-          vs_currency: "usd",
+          vs_currency: "cad",
           ids: watchList.join(","),
         },
       });
+      console.log(response.data);
       setCoins(response.data);
       setisLoading(false);
     };
@@ -33,7 +34,7 @@ const Coins = () => {
     }
 
     return (
-      <ul className="coinlist list-group mt-2">
+      <ul className="coinlist dark list-group mt-2">
         {coins.map((coin) => {
           return <Coin key={coin.id} coin={coin} handleDelete={handleDelete} />;
         })}

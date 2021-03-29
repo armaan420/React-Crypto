@@ -5,8 +5,9 @@ const Coin = ({ coin, handleDelete }) => {
   let classes = coin.price_change_percentage_24h < 0;
   return (
     <Link to={`/coins/${coin.id}`} className="text-decoration-none my-1 ">
-      <li className="coin coinlist-item list-group-item list-group-item-action d-flex justify-content-between align-items-center text-dark ">
+      <li className="coin coinlist-item  list-group-item list-group-item-action d-flex justify-content-between align-items-center text-light  bg-dark">
         <img src={coin.image} className="coinlist-image" alt="" />
+        <span>{coin.name}</span>
         <span className="text-decoration-none">${coin.current_price}</span>
 
         <span className={`text-${classes ? "danger" : "success"} mr-2`}>

@@ -16,8 +16,8 @@ const Chart = ({ coinData, coinVolume, handleDay }) => {
             {
               label: `${coin} price`,
               data: coinData,
-              backgroundColor: "rgba(125, 184, 15, 0.6)",
-              borderColor: "rgba(203, 342, 45, 0.4)",
+              backgroundColor: "#00cccc",
+              borderColor: "rgba(203, 34, 45, 0.4)",
               pointRadius: 1.5,
               borderWidth: 1,
             },
@@ -32,7 +32,7 @@ const Chart = ({ coinData, coinVolume, handleDay }) => {
     if (coinVolume) {
       return (
         <>
-          <p className="my-0">${coinVolume.current_price} USD</p>
+          <p className="white my-0">${coinVolume.current_price} USD</p>
           <p
             className={
               coinVolume.price_change_24h < 0
@@ -53,19 +53,22 @@ const Chart = ({ coinData, coinVolume, handleDay }) => {
   };
 
   return (
-    <div className="bg-white border mt-2 rounded p-3">
+    <div className="bg border mt-2 rounded p-3">
       {renderPrice()}
       <div>
-        <canvas ref={chartRef} id="chart" width={250} height={250}></canvas>
-        <div>
+        <canvas ref={chartRef} id="chart" width={1000} height={400}></canvas>
+        <div className="btn-container">
           <button onClick={() => handleDay(1)} className="days-btn">
-            24h
+            24 hours
           </button>
-          <button onClick={() => handleDay(10)} className="days-btn">
-            10d
+          <button onClick={() => handleDay(7)} className="days-btn">
+            1 week
+          </button>
+          <button onClick={() => handleDay(30)} className="days-btn">
+            1 month
           </button>
           <button onClick={() => handleDay(365)} className="days-btn">
-            1y
+            1 year
           </button>
         </div>
       </div>

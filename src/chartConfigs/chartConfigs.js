@@ -9,7 +9,7 @@ export const chartHistory = {
     duration: 2000,
   },
 
-  maintainAspectRatio: false,
+  maintainAspectRatio: true,
   responsive: true,
   scales: {
     xAxes: [

@@ -4,7 +4,7 @@ const CoinData = ({ coinVolume }) => {
   const renderData = () => {
     if (coinVolume) {
       return (
-        <div className="bg-white mt-3 p-2 rounded border row">
+        <div className="bg-dark mt-3 p-2 rounded border row white">
           <div className="col-sm">
             <div className="d-flex flex-column">
               <span className="text-muted coin-data-category">Market Cap</span>
